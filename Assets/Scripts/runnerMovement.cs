@@ -53,5 +53,14 @@ public class runnerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isGrounded = true;
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.CompareTag("meta"))
+        {
+            speed = 0;
+            Destroy(collision.gameObject);
+        }
     }
 }
