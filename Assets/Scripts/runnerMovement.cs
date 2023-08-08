@@ -14,11 +14,11 @@ public class runnerMovement : MonoBehaviour
     Rigidbody rb;
     bool isGrounded = false;
 
-    SerialPort serialPort = new SerialPort("COM6", 9600);
+    //SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
-        serialPort.Open();
-        serialPort.ReadTimeout = 1;
+        //serialPort.Open();
+        //serialPort.ReadTimeout = 1;
         Physics.gravity = gravity;
         rb = GetComponent<Rigidbody>();
     }
@@ -26,18 +26,18 @@ public class runnerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(serialPort.IsOpen)
-        {
-            string value = serialPort.ReadLine();
-            string[] Botn = value.Split(',');
+        //if(serialPort.IsOpen)
+        //{
+            //string value = serialPort.ReadLine();
+            //string[] Botn = value.Split(',');
 
             transform.Translate(speed, 0, 0);
-            if ((Convert.ToInt32(Botn[0])) == 0 && isGrounded)
+            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.S) && isGrounded)
             {
                 rb.velocity = jumpSpeed;
                 isGrounded = false;
             }
-            if ((Convert.ToInt32(Botn[1])) == 0 && isGrounded)
+            if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.A) && isGrounded)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
@@ -46,7 +46,7 @@ public class runnerMovement : MonoBehaviour
             {
                 transform.localScale = new Vector3(1, 2, 1);
             }
-        }
+        //}
         
     }
 
