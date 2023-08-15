@@ -13,7 +13,7 @@ public class runnerMovement : MonoBehaviour
 
     Rigidbody rb;
     bool isGrounded = false;
-
+    bool isSliding = false;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
@@ -41,10 +41,17 @@ public class runnerMovement : MonoBehaviour
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
+                isSliding = true;
             }
-            else
+            else if (isGrounded)
             {
                 transform.localScale = new Vector3(1, 2, 1);
+                if (isSliding = true)
+                {
+                    transform.position = new Vector3(transform.position.x, 2.5f, transform.position.z);
+                    isSliding = false;
+                }
+                
             }
         //}
         

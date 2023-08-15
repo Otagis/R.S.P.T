@@ -5,16 +5,11 @@ using UnityEngine;
 public class groundManager : MonoBehaviour
 {
     [SerializeField] GameObject[] piso;
-    private Vector3 posicion = new Vector3(2.1604f, 4.045591f, 8.603987f);
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int numeroDePiso;
 
-    // Update is called once per frame
-    void Update()
+    private void Start() 
     {
-        
+        numeroDePiso = Random.Range(2, 6);
+        piso[numeroDePiso].SetActive(false);
     }
 }
