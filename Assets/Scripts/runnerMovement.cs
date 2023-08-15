@@ -46,7 +46,7 @@ public class runnerMovement : MonoBehaviour
             else if (isGrounded)
             {
                 transform.localScale = new Vector3(1, 2, 1);
-                if (isSliding = true)
+                if (isSliding == true)
                 {
                     transform.position = new Vector3(transform.position.x, 2.5f, transform.position.z);
                     isSliding = false;

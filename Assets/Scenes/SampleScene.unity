@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4504062, g: 0.4982043, b: 0.5633354, a: 1}
+  m_IndirectSpecularColor: {r: 0.45040572, g: 0.49820352, b: 0.5633345, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,6 +350,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3916124633943372096, guid: b8fa8b7b1c744154ab413fb872409ed3,
     type: 3}
   m_PrefabInstance: {fileID: 203524276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &309610342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916124633943666016, guid: b8fa8b7b1c744154ab413fb872409ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6698690720834847164}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &524507439
 PrefabInstance:
@@ -864,6 +870,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4, y: 2, z: 2}
   m_Center: {x: 1, y: 0, z: 0}
+--- !u!1 &884052190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916124633943666016, guid: b8fa8b7b1c744154ab413fb872409ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 819671812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1103553560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -925,6 +937,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b57903ba45062d48b655b4027cf60be, type: 3}
+--- !u!1 &1153696970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916124633943666016, guid: b8fa8b7b1c744154ab413fb872409ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2097657827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1377911068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916124633943666016, guid: b8fa8b7b1c744154ab413fb872409ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 203524276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1693260936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3916124633943666016, guid: b8fa8b7b1c744154ab413fb872409ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2109478781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2028125468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1101,6 +1131,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f1149e19e00884597b7d3c88491776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trampa:
+  - {fileID: 309610342}
+  - {fileID: 884052190}
+  - {fileID: 1153696970}
+  - {fileID: 1377911068}
+  - {fileID: 1693260936}
+  cantDeTramapasTotal: 2
 --- !u!4 &2049957946
 Transform:
   m_ObjectHideFlags: 0
