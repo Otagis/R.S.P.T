@@ -552,14 +552,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piso:
-  - {fileID: 2087703863}
-  - {fileID: 81124218}
   - {fileID: 874161467}
   - {fileID: 2041045083}
   - {fileID: 537145164}
   - {fileID: 2072946935}
   - {fileID: 556472462}
-  - {fileID: 799726327}
+  numeroDePiso: 0
+  ejecutado: 0
 --- !u!1 &537145164 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4b57903ba45062d48b655b4027cf60be,
@@ -1137,6 +1136,7 @@ MonoBehaviour:
   - {fileID: 1153696970}
   - {fileID: 1377911068}
   - {fileID: 1693260936}
+  FloorM: {fileID: 535338609}
   cantDeTramapasTotal: 2
 --- !u!4 &2049957946
 Transform:

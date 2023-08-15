@@ -5,11 +5,14 @@ using UnityEngine;
 public class groundManager : MonoBehaviour
 {
     [SerializeField] GameObject[] piso;
-    int numeroDePiso;
+    public int numeroDePiso;
+    public bool ejecutado;
 
-    private void Start() 
+    void Start()
     {
-        numeroDePiso = Random.Range(2, 6);
+        numeroDePiso = Random.Range(0, 5);
+        ejecutado = true;
         piso[numeroDePiso].SetActive(false);
     }
+
 }

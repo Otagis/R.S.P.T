@@ -5,20 +5,43 @@ using UnityEngine;
 public class trapManager : MonoBehaviour
 {
     [SerializeField] GameObject[] trampa;
+    public GameObject FloorM;
     int numeroDeTrampa;
     int numeroRepetido;
     public int cantDeTramapasTotal = 2;
     // Start is called before the first frame update
     void Start()
+    { //Object reference not set to an instance of an object trapManager
+
+            
+        
+    }
+    private void Update()
     {
-        for (int i = 0; i < cantDeTramapasTotal; i++)
+        if (FloorM.GetComponent<groundManager>().ejecutado)
         {
-            numeroDeTrampa = numeroRepetido;
-            while (numeroDeTrampa == numeroRepetido)
+            for (int i = 0; i < cantDeTramapasTotal; i++)
             {
-                numeroDeTrampa = Random.Range(0, 5);
+                numeroRepetido = numeroDeTrampa;
+
+                while (numeroDeTrampa == numeroRepetido)
+                {
+                    numeroDeTrampa = Random.Range(0, 5);
+                    Comprobar();
+                }
+
+                trampa[numeroDeTrampa].SetActive(true);
+                Debug.Log("número asignado");
+                FloorM.GetComponent<groundManager>().ejecutado = false;
             }
-            trampa[numeroDeTrampa].SetActive(true);
+        }
+    }
+    void Comprobar()
+    {
+        if (numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso)
+        {
+            Debug.Log("Se Reinició");
+            numeroDeTrampa = Random.Range(0, 5);
         }
     }
 }
