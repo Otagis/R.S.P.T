@@ -24,9 +24,9 @@ public class trapManager : MonoBehaviour
             {
                 numeroRepetido = numeroDeTrampa;
 
-                while (numeroDeTrampa == numeroRepetido)
+                while (numeroDeTrampa == numeroRepetido || numeroDeTrampa == numeroRepetido + 1 || numeroDeTrampa == numeroRepetido - 1)
                 {
-                    numeroDeTrampa = Random.Range(0, 5);
+                    numeroDeTrampa = Random.Range(0, 6);
                     Comprobar();
                 }
 
@@ -38,10 +38,10 @@ public class trapManager : MonoBehaviour
     }
     void Comprobar()
     {
-        if (numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso)
+        while (numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso || numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso + 1 || numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso - 1)
         {
             Debug.Log("Se Reinició");
-            numeroDeTrampa = Random.Range(0, 5);
+            numeroDeTrampa = Random.Range(0, 6);
         }
     }
 }

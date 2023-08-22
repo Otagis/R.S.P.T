@@ -10,7 +10,7 @@ public class groundManager : MonoBehaviour
 
     void Start()
     {
-        numeroDePiso = Random.Range(0, 5);
+        numeroDePiso = Random.Range(0, 6);
         ejecutado = true;
         piso[numeroDePiso].SetActive(false);
     }

@@ -32,16 +32,20 @@ public class runnerMovement : MonoBehaviour
             //string[] Botn = value.Split(',');
 
             transform.Translate(speed, 0, 0);
-            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.S) && isGrounded)
+            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 rb.velocity = jumpSpeed;
                 isGrounded = false;
             }
-            if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.A) && isGrounded)
+            if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.S) && isGrounded)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
                 isSliding = true;
+                if (isGrounded == false)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                }
             }
             else if (isGrounded)
             {
