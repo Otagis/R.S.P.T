@@ -14,6 +14,10 @@ public class runnerMovement : MonoBehaviour
     Rigidbody rb;
     bool isGrounded = false;
     bool isSliding = false;
+
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
@@ -34,25 +38,38 @@ public class runnerMovement : MonoBehaviour
             transform.Translate(speed, 0, 0);
             if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
                 rb.velocity = jumpSpeed;
                 isGrounded = false;
+                transform.localScale = new Vector3(1, 2, 1);
+            }
+            if (Input.GetKey(KeyCode.W) && isJumping == true)
+            {
+                if (jumpTimeCounter > 0)
+                {
+                    rb.velocity = jumpSpeed;
+                    jumpTimeCounter -= Time.deltaTime;
+                }
+                else
+                {
+                    isJumping = false;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+            isJumping = false;
             }
             if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.S) && isGrounded)
             {
                 transform.localScale = new Vector3(1, 1, 1);
-                transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
                 isSliding = true;
-                if (isGrounded == false)
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                }
             }
             else if (isGrounded)
             {
                 transform.localScale = new Vector3(1, 2, 1);
                 if (isSliding == true)
                 {
-                    transform.position = new Vector3(transform.position.x, 2.5f, transform.position.z);
                     isSliding = false;
                 }
                 

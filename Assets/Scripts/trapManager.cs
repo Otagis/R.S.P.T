@@ -11,10 +11,8 @@ public class trapManager : MonoBehaviour
     public int cantDeTramapasTotal = 2;
     // Start is called before the first frame update
     void Start()
-    { //Object reference not set to an instance of an object trapManager
-
-            
-        
+    { 
+          
     }
     private void Update()
     {
