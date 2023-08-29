@@ -11,10 +11,6 @@ public class trapManager : MonoBehaviour
     public int cantDeTramapasTotal = 2;
     // Start is called before the first frame update
     void Start()
-    { 
-          
-    }
-    private void Update()
     {
         if (FloorM.GetComponent<groundManager>().ejecutado)
         {
@@ -34,6 +30,7 @@ public class trapManager : MonoBehaviour
             }
         }
     }
+ 
     void Comprobar()
     {
         while (numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso || numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso + 1 || numeroDeTrampa == FloorM.GetComponent<groundManager>().numeroDePiso - 1)

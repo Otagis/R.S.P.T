@@ -18,6 +18,8 @@ public class runnerMovement : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+
+    public GameObject fManager;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
@@ -88,6 +90,12 @@ public class runnerMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("meta"))
         {
             speed = 0;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("redFlag"))
+        {
+            transform.Rotate(0, 180, 0);
+            fManager.GetComponent<flagChanger>().Flags[2].SetActive(true);
             Destroy(collision.gameObject);
         }
     }
