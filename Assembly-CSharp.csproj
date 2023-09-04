@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\groundManager.cs" />
     <Compile Include="Assets\Scripts\runnerMovement.cs" />
     <Compile Include="Assets\Scripts\trapManager.cs" />
+    <Compile Include="Assets\Scripts\trapRandomizer.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/47963445/Documents/GitHub/R.S.P.T/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
