@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\flagChanger.cs" />
     <Compile Include="Assets\Scripts\groundManager.cs" />
+    <Compile Include="Assets\Scripts\movement.cs" />
     <Compile Include="Assets\Scripts\runnerMovement.cs" />
     <Compile Include="Assets\Scripts\trapManager.cs" />
     <Compile Include="Assets\Scripts\trapRandomizer.cs" />

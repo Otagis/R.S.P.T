@@ -60,7 +60,7 @@ public class runnerMovement : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-            isJumping = false;
+                isJumping = false;
             }
             if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.S) && isGrounded)
             {
