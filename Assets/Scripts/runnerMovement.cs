@@ -46,7 +46,7 @@ public class runnerMovement : MonoBehaviour
                 isGrounded = false;
                 transform.localScale = new Vector3(1, 2, 1);
             }
-            if (Input.GetKey(KeyCode.W) && isJumping == true)
+            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKey(KeyCode.W) && isJumping == true)
             {
                 if (jumpTimeCounter > 0)
                 {

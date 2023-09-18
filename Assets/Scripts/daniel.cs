@@ -12,11 +12,11 @@ public class daniel : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.H))
         {
-            //x = Random.Range(-11, 11);
-            //z = Random.Range(-12, 12);
+            x = Random.Range(-11, 11);
+            z = Random.Range(-12, 12);
 
-            //Instantiate(hola, new Vector3(x, 10, z), Quaternion.identity);
-            Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);
+            Instantiate(hola, new Vector3(x, 30, z), Quaternion.identity);
+            //Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);
         }
     }
 }
