@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\daniel.cs" />
     <Compile Include="Assets\Scripts\flagChanger.cs" />
     <Compile Include="Assets\Scripts\groundManager.cs" />
     <Compile Include="Assets\Scripts\movement.cs" />
