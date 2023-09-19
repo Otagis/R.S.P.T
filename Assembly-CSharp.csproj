@@ -64,14 +64,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AsteroidCol.cs" />
-    <Compile Include="Assets\Scripts\daniel.cs" />
-    <Compile Include="Assets\Scripts\flagChanger.cs" />
-    <Compile Include="Assets\Scripts\groundManager.cs" />
-    <Compile Include="Assets\Scripts\movement.cs" />
-    <Compile Include="Assets\Scripts\runnerMovement.cs" />
-    <Compile Include="Assets\Scripts\trapManager.cs" />
-    <Compile Include="Assets\Scripts\trapRandomizer.cs" />
+    <Compile Include="Assets\Scripts\CWACOA\AsteroidCol.cs" />
+    <Compile Include="Assets\Scripts\CWACOA\daniel.cs" />
+    <Compile Include="Assets\Scripts\CWACOA\movement.cs" />
+    <Compile Include="Assets\Scripts\SOR\flagChanger.cs" />
+    <Compile Include="Assets\Scripts\SOR\groundManager.cs" />
+    <Compile Include="Assets\Scripts\SOR\runnerMovement.cs" />
+    <Compile Include="Assets\Scripts\SOR\trapManager.cs" />
+    <Compile Include="Assets\Scripts\SOR\trapRandomizer.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>C:/Users/47963445/Documents/GitHub/R.S.P.T/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
