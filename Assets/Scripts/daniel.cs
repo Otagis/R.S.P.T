@@ -5,17 +5,27 @@ using UnityEngine;
 public class daniel : MonoBehaviour
 {
     public GameObject hola;
-    private int x;
-    private int z;
-    // Update is called once per frame
+    private float x;
+    private float z;
+    //Rigidbody rb;
+    public Vector3 gravity;
+    //public Vector3 fallVelocity;
+    private void Awake()
+    {
+        //rb = hola.gameObject.GetComponent<Rigidbody>();
+        Physics.gravity = gravity;
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.H))
         {
-            x = Random.Range(-11, 11);
-            z = Random.Range(-12, 12);
+            x = Random.Range(-11f, 11f);
+            z = Random.Range(-12f, 12f);
 
-            Instantiate(hola, new Vector3(x, 30, z), Quaternion.identity);
+            //rb.velocity = fallVelocity;
+            Instantiate(hola, new Vector3(x, 30f, z), Quaternion.identity);
+            
             //Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);
         }
     }

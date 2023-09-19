@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hola: {fileID: 1398153339981235745, guid: 9f3e348c0e056a248bdca676ae9c7a13, type: 3}
+  gravity: {x: 0, y: -100, z: 0}
 --- !u!4 &1248746351
 Transform:
   m_ObjectHideFlags: 0

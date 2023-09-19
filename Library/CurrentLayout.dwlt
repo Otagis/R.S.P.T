@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 49
+  controlID: 91
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 498}
   m_MaxSize: {x: 14006, y: 14048}
   vertical: 1
-  controlID: 50
+  controlID: 92
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -362,19 +362,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\47963445\Documents\GitHub\R.S.P.T
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 440a0000
-    m_LastClickedID: 2628
+    m_SelectedIDs: e4090000
+    m_LastClickedID: 2532
     m_ExpandedIDs: 00000000e4090000f40a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 12696
+  m_LastSelectedObjectID: 3346
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -577,9 +577,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 98310000
-      m_LastClickedID: 12696
-      m_ExpandedIDs: 
+      m_SelectedIDs: 14320000
+      m_LastClickedID: 0
+      m_ExpandedIDs: defbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -634,9 +634,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.14471245, y: 0.48252833, z: 0.082856}
+    m_Target: {x: -14.581672, y: 8.662184, z: -2.7662337}
     speed: 2
-    m_Value: {x: -0.14471245, y: 0.48252833, z: 0.082856}
+    m_Value: {x: -14.581672, y: 8.662184, z: -2.7662337}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 0
+    showSkybox: 1
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -664,13 +664,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.04504925, y: 0.6971848, z: -0.043980878, w: 0.71412164}
+    m_Target: {x: 0.19487233, y: -0.6759628, z: -0.19254766, w: -0.6841232}
     speed: 2
-    m_Value: {x: 0.04504925, y: 0.6971848, z: -0.043980878, w: 0.71412164}
+    m_Value: {x: 0.19487233, y: -0.6759628, z: -0.19254766, w: -0.6841232}
   m_Size:
-    m_Target: 2.8578837
+    m_Target: 9.806062
     speed: 2
-    m_Value: 2.8578837
+    m_Value: 9.806062
   m_Ortho:
     m_Target: 0
     speed: 2
