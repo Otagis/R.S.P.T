@@ -6,6 +6,7 @@ using System.IO.Ports;
 public class movement : MonoBehaviour
 {
     public float moveSpeed;
+    public float rotationSpeed;
     public Rigidbody rb;
     private Vector3 moveDirection;
     //Serialport serialPort = new SerialPort("COM6", 9600);
@@ -19,14 +20,29 @@ public class movement : MonoBehaviour
     
     void Update()
     {
-        ProcessInputs();
-    }
+        //ProcessInputs();
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
+        moveDirection = new Vector3(moveX, 0, moveY);
+
+        moveDirection.Normalize();
+
+        transform.Translate(moveDirection * Time.deltaTime * moveSpeed, Space.World);
+
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+    /*
     private void FixedUpdate()
     {
         Move();
     }
-
+    
     void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -38,5 +54,5 @@ public class movement : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector3(moveDirection.x * moveSpeed, 0 ,moveDirection.y * moveSpeed);
-    }
+    }*/
 }
