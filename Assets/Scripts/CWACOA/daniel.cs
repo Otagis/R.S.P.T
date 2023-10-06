@@ -31,6 +31,17 @@ public class daniel : MonoBehaviour
                 z = z + 3;
             }
             patron = 1;
+
+            x = 11;
+            z = 11;
+
+            for (int i = 0; i < 8; i++)
+            {
+                Instantiate(hola, new Vector3(x, 30f, z), Quaternion.identity);
+                x = x - 3;
+                z = z - 3;
+            }
+            patron = 1;
         }
         else if (patron == 1)
         {

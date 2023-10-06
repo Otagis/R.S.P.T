@@ -13,12 +13,25 @@ public class trapRandomizer : MonoBehaviour
         randomIndex = Random.Range(0, traps.Length);
         Vector3 randomSpawnPositionOne = new Vector3(Random.Range(-9, 0), 0.5f, 0);
         Instantiate(traps[randomIndex], randomSpawnPositionOne, Quaternion.identity);
-
-        randomIndex = Random.Range(0, traps.Length);
+        if (randomIndex == 1)
+        {
+            randomIndex = 0;
+        }
+        else
+        {
+            randomIndex = Random.Range(0, traps.Length);
+        }
         Vector3 randomSpawnPositionTwo = new Vector3(Random.Range(1, 8), 0.5f, 0);
         Instantiate(traps[randomIndex], randomSpawnPositionTwo, Quaternion.identity);
 
-        randomIndex = Random.Range(0, traps.Length);
+        if (randomIndex == 1)
+        {
+            randomIndex = 0;
+        }
+        else
+        {
+            randomIndex = Random.Range(0, traps.Length);
+        }
         Vector3 randomSpawnPositionThree = new Vector3(Random.Range(10, 17), 0.5f, 0);
         Instantiate(traps[randomIndex], randomSpawnPositionThree, Quaternion.identity);
     }

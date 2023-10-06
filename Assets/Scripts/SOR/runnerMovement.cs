@@ -37,7 +37,7 @@ public class runnerMovement : MonoBehaviour
             //string value = serialPort.ReadLine();
             //string[] Botn = value.Split(',');
 
-            transform.Translate(speed, 0, 0);
+            transform.Translate(speed * Time.deltaTime, 0, 0);
             if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 isJumping = true;
