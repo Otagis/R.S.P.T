@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class daniel : MonoBehaviour
 {
+    [SerializeField] Transform playerLocation;
     public GameObject hola;
     private int patron;
     private float x;
     private float z;
     //Rigidbody rb;
     public Vector3 gravity;
+    public float remainingTime;
+    public float timeSinceMeteorSpawn;
     //public Vector3 fallVelocity;
     private void Awake()
     {
@@ -19,52 +23,23 @@ public class daniel : MonoBehaviour
 
     void Update()
     {
-        if (patron == 0)
-        {
-            x = 11;
-            z = -11;
+        remainingTime = Time.timeSinceLevelLoad;
 
-            for (int i = 0; i < 8; i++)
-            {
-                Instantiate(hola, new Vector3(x, 30f, z), Quaternion.identity);
-                x = x - 3;
-                z = z + 3;
-            }
-            patron = 1;
-
-            x = 11;
-            z = 11;
-
-            for (int i = 0; i < 8; i++)
-            {
-                Instantiate(hola, new Vector3(x, 30f, z), Quaternion.identity);
-                x = x - 3;
-                z = z - 3;
-            }
-            patron = 1;
-        }
-        else if (patron == 1)
+        if (remainingTime < 10)
         {
 
         }
-        else if (patron == 2)
+        else
+        
+        /*if (Input.GetKey(KeyCode.H))
         {
-
-        }
-        else if (patron == 3)
-        {
-
-        }
-        if (Input.GetKey(KeyCode.H))
-        {
-            /*x = Random.Range(-11f, 11f);
+            x = Random.Range(-11f, 11f);
             z = Random.Range(-12f, 12f);
 
             //rb.velocity = fallVelocity;
             Instantiate(hola, new Vector3(x, 30f, z), Quaternion.identity);
             
-            //Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);*/
-            patron = 0;
-        }
+            //Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);
+        }*/
     }
 }

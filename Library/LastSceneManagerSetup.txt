@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Super otag run.unity
+- path: Assets/Scenes/Cloudy with a chance of asteroids.unity
   isLoaded: 1
   isActive: 1
