@@ -30,6 +30,9 @@ public class daniel : MonoBehaviour
 
         }
         else
+        {
+
+        }
         
         /*if (Input.GetKey(KeyCode.H))
         {
