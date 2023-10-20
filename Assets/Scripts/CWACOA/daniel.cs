@@ -27,7 +27,7 @@ public class daniel : MonoBehaviour
 
         if (remainingTime < 10)
         {
-
+            StartCoroutine(timeBetween());
         }
         else
         {
@@ -44,5 +44,11 @@ public class daniel : MonoBehaviour
             
             //Instantiate(hola, new Vector3(0, 1, 0), Quaternion.identity);
         }*/
+    }
+    public IEnumerator timeBetween()
+    {
+        yield return new WaitForSeconds(timeSinceMeteorSpawn);
+        Instantiate(hola, playerLocation, Quaternion.identity);
+        yield return new WaitForSeconds(timeSinceMeteorSpawn);
     }
 }
