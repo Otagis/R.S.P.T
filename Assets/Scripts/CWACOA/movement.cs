@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
+using System;
 
 public class movement : MonoBehaviour
 {
@@ -9,50 +10,60 @@ public class movement : MonoBehaviour
     public float rotationSpeed;
     public Rigidbody rb;
     private Vector3 moveDirection;
-    //Serialport serialPort = new SerialPort("COM6", 9600);
+    SerialPort serialPort = new SerialPort("COM6", 9600);
     // Update is called once per frame
-    
-    /*void Awake()
-     * {
-     *   serialPort.Open();
-     *   serialPort.ReadTimeout = 1;
-     * }*/
-    
+
+    void Awake()
+    {
+        serialPort.Open();
+        serialPort.ReadTimeout = 1;
+    }
+
     void Update()
     {
-        //ProcessInputs();
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        moveDirection = new Vector3(moveX, 0, moveY);
-
-        moveDirection.Normalize();
-
-        transform.Translate(moveDirection * Time.deltaTime * moveSpeed, Space.World);
-
-        if (moveDirection != Vector3.zero)
+        if(serialPort.IsOpen)
         {
-            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            string value = serialPort.ReadLine();
+            string[] move = value.Split(',');
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            int x = Convert.ToInt32(move[2]);
+            int y = Convert.ToInt32(move[3]);
+
+            if (x != -1 && x > 0)
+            {
+                transform.Translate(0.4f, 0, 0);
+            }
+            if (x != -1 && x < 0)
+            {
+                transform.Translate(-0.4f, 0, 0);
+            }
+            if (y != -1 && y > 0)
+            {
+                transform.Translate(0, 0, -0.4f);
+            }
+            if (y != -1 && y < 0)
+            {
+                transform.Translate(0, 0, 0.4f);
+            }
+            if (x != -1 && y != -1 && x > 0 && y > 0)
+            {
+                transform.Translate(0.2f, 0, -0.2f);
+            }
+            if (x != -1 && y != -1 && x < 0 && y > 0)
+            {
+                transform.Translate(-0.2f, 0, -0.2f);
+            }
+            if (x != -1 && y != -1 && x > 0 && y < 0)
+            {
+                transform.Translate(0.2f, 0, 0.2f);
+            }
+            if (x != -1 && y != -1 && x < 0 && y < 0)
+            {
+                transform.Translate(-0.2f, 0, 0.2f);
+            }
+
         }
-    }
-    /*
-    private void FixedUpdate()
-    {
-        Move();
-    }
+    } 
     
-    void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDirection = new Vector3(moveX, moveY);
-    }
-
-    private void Move()
-    {
-        rb.velocity = new Vector3(moveDirection.x * moveSpeed, 0 ,moveDirection.y * moveSpeed);
-    }*/
 }

@@ -20,11 +20,11 @@ public class runnerMovement : MonoBehaviour
     private bool isJumping;
 
     public GameObject fManager;
-    //SerialPort serialPort = new SerialPort("COM6", 9600);
+    SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
-        //serialPort.Open();
-        //serialPort.ReadTimeout = 1;
+        serialPort.Open();
+        serialPort.ReadTimeout = 1;
         Physics.gravity = gravity;
         rb = GetComponent<Rigidbody>();
     }
@@ -32,13 +32,13 @@ public class runnerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(serialPort.IsOpen)
-        //{
-            //string value = serialPort.ReadLine();
-            //string[] Botn = value.Split(',');
+        if(serialPort.IsOpen)
+        {
+            string value = serialPort.ReadLine();
+            string[] Botn = value.Split(',');
 
             transform.Translate(speed * Time.deltaTime, 0, 0);
-            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
+            if ((Convert.ToInt32(Botn[0])) == 0 &&  isGrounded)
             {
                 isJumping = true;
                 jumpTimeCounter = jumpTime;
@@ -46,7 +46,7 @@ public class runnerMovement : MonoBehaviour
                 isGrounded = false;
                 transform.localScale = new Vector3(1, 2, 1);
             }
-            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKey(KeyCode.W) && isJumping == true)
+            if ((Convert.ToInt32(Botn[0])) == 0 && isJumping == true)
             {
                 if (jumpTimeCounter > 0)
                 {
@@ -62,7 +62,7 @@ public class runnerMovement : MonoBehaviour
             {
                 isJumping = false;
             }
-            if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.S) && isGrounded)
+            if ((Convert.ToInt32(Botn[1])) == 0 && isGrounded)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 isSliding = true;
@@ -76,7 +76,7 @@ public class runnerMovement : MonoBehaviour
                 }
                 
             }
-        //}
+        }
         
     }
 
