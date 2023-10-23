@@ -19,6 +19,7 @@ public class daniel : MonoBehaviour
     {
         //rb = hola.gameObject.GetComponent<Rigidbody>();
         Physics.gravity = gravity;
+        playerLocation = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>(); 
     }
 
     void Update()
@@ -48,7 +49,7 @@ public class daniel : MonoBehaviour
     public IEnumerator timeBetween()
     {
         yield return new WaitForSeconds(timeSinceMeteorSpawn);
-        Instantiate(hola, playerLocation, Quaternion.identity);
-        yield return new WaitForSeconds(timeSinceMeteorSpawn);
+        Instantiate(hola, playerLocation.position + Vector3.up * 30, Quaternion.identity);
+        StopAllCoroutines();
     }
 }
