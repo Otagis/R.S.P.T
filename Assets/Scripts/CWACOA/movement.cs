@@ -9,15 +9,21 @@ public class movement : MonoBehaviour
     public float rotationSpeed;
     public Rigidbody rb;
     private Vector3 moveDirection;
+    private Animator animator;
     //Serialport serialPort = new SerialPort("COM6", 9600);
     // Update is called once per frame
-    
+
     /*void Awake()
      * {
      *   serialPort.Open();
      *   serialPort.ReadTimeout = 1;
      * }*/
-    
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
         //ProcessInputs();
@@ -32,9 +38,15 @@ public class movement : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         {
+            animator.SetBool("isMoving", true);
+
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
         }
     }
     /*

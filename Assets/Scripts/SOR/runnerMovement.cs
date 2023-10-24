@@ -20,6 +20,8 @@ public class runnerMovement : MonoBehaviour
     private bool isJumping;
 
     public GameObject fManager;
+    private Animator animator;
+    private CapsuleCollider collider;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
     void Awake()
     {
@@ -27,6 +29,9 @@ public class runnerMovement : MonoBehaviour
         //serialPort.ReadTimeout = 1;
         Physics.gravity = gravity;
         rb = GetComponent<Rigidbody>();
+        collider = GetComponent<CapsuleCollider>(); 
+        animator = GetComponent<Animator>();
+        animator.SetBool("isRunning", true);
     }
 
     // Update is called once per frame
@@ -44,7 +49,10 @@ public class runnerMovement : MonoBehaviour
                 jumpTimeCounter = jumpTime;
                 rb.velocity = jumpSpeed;
                 isGrounded = false;
-                transform.localScale = new Vector3(1, 2, 1);
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isSliding", false);
+                collider.height = 2;
+                collider.center = new Vector3 (0, 1, 0);
             }
             if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKey(KeyCode.W) && isJumping == true)
             {
@@ -64,17 +72,21 @@ public class runnerMovement : MonoBehaviour
             }
             if (/*(Convert.ToInt32(Botn[1])) == 0*/ Input.GetKey(KeyCode.S) && isGrounded)
             {
-                transform.localScale = new Vector3(1, 1, 1);
+                collider.height = 1;
+                collider.center = new Vector3 (0, 0.5f, 0);
+                animator.SetBool("isSliding", true);
                 isSliding = true;
             }
             else if (isGrounded)
             {
-                transform.localScale = new Vector3(1, 2, 1);
+                animator.SetBool("isJumping", false);
                 if (isSliding == true)
                 {
                     isSliding = false;
+                    animator.SetBool("isSliding", false);
                 }
-                
+                collider.height = 2;
+                collider.center = new Vector3 (0, 1, 0);
             }
         //}
         
@@ -91,6 +103,7 @@ public class runnerMovement : MonoBehaviour
         {
             speed = 0;
             Destroy(collision.gameObject);
+            animator.SetBool("isRunning", false);
         }
         else if (collision.gameObject.CompareTag("redFlag"))
         {
