@@ -75,6 +75,7 @@ public class runnerMovement : MonoBehaviour
                 collider.height = 1;
                 collider.center = new Vector3 (0, 0.5f, 0);
                 animator.SetBool("isSliding", true);
+                animator.SetBool("isJumping", false);
                 isSliding = true;
             }
             else if (isGrounded)
