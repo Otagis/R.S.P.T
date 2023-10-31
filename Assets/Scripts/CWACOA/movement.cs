@@ -49,6 +49,7 @@ public class movement : MonoBehaviour
             animator.SetBool("isMoving", false);
         }
     }
+
     /*
     private void FixedUpdate()
     {

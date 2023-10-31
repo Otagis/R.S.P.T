@@ -19,7 +19,7 @@ public class runnerMovement : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
-    public GameObject fManager;
+    public trapRandomizer fManager;
     private Animator animator;
     private CapsuleCollider collider;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
@@ -109,8 +109,8 @@ public class runnerMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("redFlag"))
         {
             transform.Rotate(0, 180, 0);
-            fManager.GetComponent<flagChanger>().Flags[2].SetActive(true);
             Destroy(collision.gameObject);
+            Instantiate(, new Vector3(0, 2.5f, 0), Quaternion.identity);
         }
     }
 }
