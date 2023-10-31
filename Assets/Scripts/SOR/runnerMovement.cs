@@ -19,7 +19,7 @@ public class runnerMovement : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
-    public trapRandomizer fManager;
+    public GameObject goal;
     private Animator animator;
     private CapsuleCollider collider;
     //SerialPort serialPort = new SerialPort("COM6", 9600);
@@ -41,8 +41,9 @@ public class runnerMovement : MonoBehaviour
         //{
             //string value = serialPort.ReadLine();
             //string[] Botn = value.Split(',');
+            if (Input.GetKey(KeyCode.H))
+                transform.Translate(speed * Time.deltaTime, 0, 0);
 
-            transform.Translate(speed * Time.deltaTime, 0, 0);
             if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 isJumping = true;
@@ -110,7 +111,7 @@ public class runnerMovement : MonoBehaviour
         {
             transform.Rotate(0, 180, 0);
             Destroy(collision.gameObject);
-            Instantiate(, new Vector3(0, 2.5f, 0), Quaternion.identity);
+            Instantiate(goal, new Vector3(0, 2.5f, 0), Quaternion.identity);
         }
     }
 }
