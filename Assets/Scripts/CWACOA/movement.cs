@@ -8,7 +8,7 @@ public class movement : MonoBehaviour
     public float moveSpeed;
     public float rotationSpeed;
     public Rigidbody rb;
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     private Animator animator;
     //Serialport serialPort = new SerialPort("COM6", 9600);
     // Update is called once per frame
