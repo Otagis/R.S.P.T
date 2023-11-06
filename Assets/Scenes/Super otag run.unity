@@ -1284,12 +1284,12 @@ MonoBehaviour:
   traps:
   - {fileID: 7890896751261668430, guid: 3ba060c7d35e2fa4ea228c6dd6bfaacc, type: 3}
   - {fileID: 287780212120995996, guid: 450714e09bd341046b5cc04cdc4fbb81, type: 3}
-  cantTrampas: 3
+  cantTrampas: 6
   distanciaEntreTrampas: 8
   flags:
   - {fileID: 632406931729118121, guid: 4a6032ad19ab22b4a8711f3605ae18ad, type: 3}
   - {fileID: 1010786503278184708, guid: b1ab9d16017c21c4b8f258b937681db9, type: 3}
-  flag: 0
+  flag: 1
 --- !u!1 &1455936610 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 0785c1dd30adcc448a1a5a86971d6b27,
