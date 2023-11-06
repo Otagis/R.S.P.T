@@ -8,6 +8,7 @@ public class daniel : MonoBehaviour
     [SerializeField] Transform playerLocation;
     [SerializeField] movement movementScript;
     public GameObject hola;
+    public GameObject fpi;
     private int patron;
     private float x;
     private float z;
@@ -68,7 +69,7 @@ public class daniel : MonoBehaviour
     public IEnumerator timeBetween()
     {
         yield return new WaitForSeconds(timeSinceMeteorSpawn);
-        //si la posicion en la que el meteorito spawnea esta fuera de los limites del deberia spawnear justo antes de la pared invisible limitando el eje x y z entre -9 y 9
+        Instantiate(fpi, meteorSpawnPosition - Vector3.up * 29.78f, Quaternion.identity);
         Instantiate(hola, meteorSpawnPosition, Quaternion.identity);
         StopAllCoroutines();
     }

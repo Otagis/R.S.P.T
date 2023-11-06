@@ -25,6 +25,7 @@ public class AsteroidCol : MonoBehaviour
             Destroy(gameObject);
             Destroy(GameObject.FindGameObjectWithTag("Player"));
         }
+        Destroy(GameObject.FindGameObjectWithTag("temporalIndicator"));
         Destroy(gameObject);
     }
 }
