@@ -14,7 +14,8 @@ public class daniel : MonoBehaviour
     private float z;
     //Rigidbody rb;
     public Vector3 gravity;
-    public float remainingTime;
+    private float remainingTime;
+    public float timeBeforeCompletion;
     public float timeSinceMeteorSpawn;
     //public Vector3 fallVelocity;
     private Vector3 meteorSpawnPosition;
@@ -46,7 +47,7 @@ public class daniel : MonoBehaviour
             meteorSpawnPosition.z = 9;
         }
 
-        if (remainingTime < 10)
+        if (remainingTime < timeBeforeCompletion)
         {
             StartCoroutine(timeBetween());
         }

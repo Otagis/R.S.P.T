@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CWACOA\AsteroidCol.cs" />
     <Compile Include="Assets\Scripts\CWACOA\daniel.cs" />
     <Compile Include="Assets\Scripts\CWACOA\movement.cs" />
+    <Compile Include="Assets\Scripts\CWACOA\PropsSpawner.cs" />
     <Compile Include="Assets\Scripts\SOR\flagChanger.cs" />
     <Compile Include="Assets\Scripts\SOR\groundManager.cs" />
     <Compile Include="Assets\Scripts\SOR\runnerMovement.cs" />

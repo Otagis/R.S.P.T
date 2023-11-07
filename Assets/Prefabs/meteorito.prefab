@@ -124,7 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLocation: {fileID: 0}
   distanceToPlayer: 0
+  danielScript: {fileID: 0}
   asteroidExplosionRadius: 5
+  particle: {fileID: 2209104950419838037, guid: 5b827a2a11a158044a76101bee697286,
+    type: 3}
 --- !u!96 &96752262353992244
 TrailRenderer:
   serializedVersion: 2
@@ -172,7 +175,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4404772
+        value: 0.6904734
         inSlope: -0.16878538
         outSlope: -0.16878538
         tangentMode: 0
@@ -180,8 +183,8 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.5069445
       - serializedVersion: 3
-        time: 0.71496975
-        value: 0.000000029802322
+        time: 0.5168954
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0

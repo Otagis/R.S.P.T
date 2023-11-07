@@ -6,7 +6,9 @@ public class AsteroidCol : MonoBehaviour
 {
     [SerializeField] Transform playerLocation;
     [SerializeField] float distanceToPlayer;
+    [SerializeField] daniel danielScript;
     public float asteroidExplosionRadius;
+    public GameObject particle;
 
     private void Awake()
     {
@@ -20,6 +22,7 @@ public class AsteroidCol : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Instantiate(particle, gameObject.transform.position, Quaternion.identity);
         if (distanceToPlayer < asteroidExplosionRadius)
         {
             Destroy(gameObject);

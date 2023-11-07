@@ -8,6 +8,7 @@ TagManager:
   - meta
   - redFlag
   - temporalIndicator
+  - meteorSpawn
   layers:
   - Default
   - TransparentFX
