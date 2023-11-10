@@ -51,10 +51,6 @@ public class daniel : MonoBehaviour
         {
             StartCoroutine(timeBetween());
         }
-        else
-        {
-
-        }
         
         /*if (Input.GetKey(KeyCode.H))
         {
@@ -73,5 +69,9 @@ public class daniel : MonoBehaviour
         Instantiate(fpi, meteorSpawnPosition - Vector3.up * 29.78f, Quaternion.identity);
         Instantiate(hola, meteorSpawnPosition, Quaternion.identity);
         StopAllCoroutines();
+    }
+    public void ConfirmedDeath()
+    {
+        timeBeforeCompletion = 0;
     }
 }

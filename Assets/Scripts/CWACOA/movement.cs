@@ -50,6 +50,13 @@ public class movement : MonoBehaviour
         }
     }
 
+    public void OnDeath()
+    {
+        moveSpeed = 0;
+        rotationSpeed = 0;
+        animator.SetBool("death", true);
+    }
+
     /*
     private void FixedUpdate()
     {

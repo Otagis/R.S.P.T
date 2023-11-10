@@ -7,12 +7,15 @@ public class AsteroidCol : MonoBehaviour
     [SerializeField] Transform playerLocation;
     [SerializeField] float distanceToPlayer;
     [SerializeField] daniel danielScript;
+    [SerializeField] movement movementScript;
     public float asteroidExplosionRadius;
     public GameObject particle;
 
     private void Awake()
     {
         playerLocation = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<movement>();
+        danielScript = GameObject.FindGameObjectWithTag("meteorSpawn").GetComponent<daniel>();
     }
 
     private void Update()
@@ -26,7 +29,9 @@ public class AsteroidCol : MonoBehaviour
         if (distanceToPlayer < asteroidExplosionRadius)
         {
             Destroy(gameObject);
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            //Destroy(GameObject.FindGameObjectWithTag("Player"));
+            movementScript.OnDeath();
+            danielScript.ConfirmedDeath();
         }
         Destroy(GameObject.FindGameObjectWithTag("temporalIndicator"));
         Destroy(gameObject);

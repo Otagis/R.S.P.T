@@ -99,7 +99,7 @@ public class runnerMovement : MonoBehaviour
         isGrounded = true;
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Destroy(gameObject);
+            OnDeath();
         }
         else if (collision.gameObject.CompareTag("meta"))
         {
@@ -113,5 +113,12 @@ public class runnerMovement : MonoBehaviour
             Destroy(collision.gameObject);
             Instantiate(goal, new Vector3(0, 2.5f, 0), Quaternion.identity);
         }
+    }
+
+    public void OnDeath()
+    {
+        speed = 0;
+        jumpSpeed = new Vector3 (0, 0, 0);
+        animator.SetBool("death", true);
     }
 }
