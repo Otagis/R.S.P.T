@@ -55,6 +55,7 @@ public class movement : MonoBehaviour
         moveSpeed = 0;
         rotationSpeed = 0;
         animator.SetBool("death", true);
+        SceneLoader.instance.OnLose();
     }
 
     /*

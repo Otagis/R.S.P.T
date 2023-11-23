@@ -120,5 +120,6 @@ public class runnerMovement : MonoBehaviour
         speed = 0;
         jumpSpeed = new Vector3 (0, 0, 0);
         animator.SetBool("death", true);
+        SceneLoader.instance.OnLose();
     }
 }
