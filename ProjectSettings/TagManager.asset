@@ -9,6 +9,7 @@ TagManager:
   - redFlag
   - temporalIndicator
   - meteorSpawn
+  - barrier
   layers:
   - Default
   - TransparentFX

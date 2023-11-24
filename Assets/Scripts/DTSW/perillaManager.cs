@@ -14,9 +14,12 @@ public class perillaManager : MonoBehaviour
     public bool isComplete1;
     public bool isComplete2;
     public bool isComplete3;
+    private bool deactivate;
     public int goal1;
     public int goal2;
     public int goal3;
+    private float remainingTime;
+    public float timeBeforeCompletion;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +37,7 @@ public class perillaManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+        remainingTime = Time.timeSinceLevelLoad;
         if (serialPort.IsOpen)
         {
             string value = serialPort.ReadLine();
@@ -87,8 +89,26 @@ public class perillaManager : MonoBehaviour
             {
                 perillaMovement3.localEulerAngles = new Vector3(0, goal3, 0);
             }
+
         }
-        
+
+        if (remainingTime >= timeBeforeCompletion && deactivate == false)
+        {
+            SceneLoader.instance.OnWin();
+            deactivate = true;
+        }
+        if (isComplete1 && isComplete2 && isComplete3 && deactivate == false)
+        {
+            SceneLoader.instance.OnWin();
+            deactivate = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            isComplete1 = true;
+            isComplete2 = true;
+            isComplete3 = true;
+        }
     }
 
 }

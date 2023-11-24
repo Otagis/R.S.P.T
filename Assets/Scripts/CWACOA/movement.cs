@@ -57,23 +57,4 @@ public class movement : MonoBehaviour
         animator.SetBool("death", true);
         SceneLoader.instance.OnLose();
     }
-
-    /*
-    private void FixedUpdate()
-    {
-        Move();
-    }
-    
-    void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        moveDirection = new Vector3(moveX, moveY);
-    }
-
-    private void Move()
-    {
-        rb.velocity = new Vector3(moveDirection.x * moveSpeed, 0 ,moveDirection.y * moveSpeed);
-    }*/
 }

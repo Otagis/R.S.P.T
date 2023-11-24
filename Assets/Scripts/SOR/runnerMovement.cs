@@ -41,9 +41,10 @@ public class runnerMovement : MonoBehaviour
         //{
             //string value = serialPort.ReadLine();
             //string[] Botn = value.Split(',');
-            if (Input.GetKey(KeyCode.H))
+            if (Input.GetKeyDown(KeyCode.H))
+                SceneLoader.instance.OnWin();
+            if (Input.GetKey(KeyCode.J))
                 transform.Translate(speed * Time.deltaTime, 0, 0);
-
             if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 isJumping = true;
@@ -106,6 +107,7 @@ public class runnerMovement : MonoBehaviour
             speed = 0;
             Destroy(collision.gameObject);
             animator.SetBool("isRunning", false);
+            SceneLoader.instance.OnWin();
         }
         else if (collision.gameObject.CompareTag("redFlag"))
         {

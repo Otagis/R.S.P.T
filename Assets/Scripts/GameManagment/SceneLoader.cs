@@ -31,29 +31,44 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneNum);
         if (sceneNum == 4)
         {
-            sceneNum = 1;
+            sceneNum = 0;
         }
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 
     public void OnWin()
     {
         sceneNum += 1;
-        SceneManager.LoadScene(sceneNum);
         if (sceneNum == 4)
         {
             sceneNum = 1;
         }
         puntos += 100;
+        StartCoroutine(WaitBeforeTransition());
     }
 
     public void OnLose()
     {
         sceneNum += 1;
-        SceneManager.LoadScene(sceneNum);
         if (sceneNum == 4)
         {
             sceneNum = 1;
         }
         vidas -= 1;
+        StartCoroutine(WaitBeforeTransition());
+    }
+
+    private IEnumerator WaitBeforeTransition()
+    {
+        Debug.Log("Waiting");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(sceneNum);
+        Debug.Log("Done!");
+        StopAllCoroutines();
     }
 }

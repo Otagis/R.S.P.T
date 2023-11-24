@@ -19,37 +19,51 @@ public class daniel : MonoBehaviour
     public float timeSinceMeteorSpawn;
     //public Vector3 fallVelocity;
     private Vector3 meteorSpawnPosition;
+    private bool lost;
     private void Awake()
     {
         //rb = hola.gameObject.GetComponent<Rigidbody>();
         Physics.gravity = gravity;
         playerLocation = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        lost = false;
     }
 
     void Update()
     {
         remainingTime = Time.timeSinceLevelLoad;
-        meteorSpawnPosition = playerLocation.position + Vector3.up * 30 + movementScript.moveDirection * movementScript.moveSpeed;
-        if (meteorSpawnPosition.x < -9)
+        if (lost == false)
         {
-            meteorSpawnPosition.x = -9;
+            meteorSpawnPosition = playerLocation.position + Vector3.up * 30 + movementScript.moveDirection * movementScript.moveSpeed;
+
+            if (meteorSpawnPosition.x < -9)
+            {
+                meteorSpawnPosition.x = -9;
+            }
+            if (meteorSpawnPosition.x > 9)
+            {
+                meteorSpawnPosition.x = 9;
+            }
+            if (meteorSpawnPosition.z < -9)
+            {
+                meteorSpawnPosition.z = -9;
+            }
+            if (meteorSpawnPosition.z > 9)
+            {
+                meteorSpawnPosition.z = 9;
+            }
         }
-        if (meteorSpawnPosition.x > 9)
-        {
-            meteorSpawnPosition.x = 9;
-        }
-        if (meteorSpawnPosition.z < -9)
-        {
-            meteorSpawnPosition.z = -9;
-        }
-        if (meteorSpawnPosition.z > 9)
-        {
-            meteorSpawnPosition.z = 9;
-        }
+            
+        else
+            meteorSpawnPosition = new Vector3 (100, 0, 100);
 
         if (remainingTime < timeBeforeCompletion)
         {
             StartCoroutine(timeBetween());
+        }
+        if (remainingTime >= timeBeforeCompletion && lost == false)
+        {
+            SceneLoader.instance.OnWin();
+            lost = true;
         }
         
         /*if (Input.GetKey(KeyCode.H))
@@ -72,6 +86,7 @@ public class daniel : MonoBehaviour
     }
     public void ConfirmedDeath()
     {
+        lost = true;
         timeBeforeCompletion = 0;
     }
 }
