@@ -33,6 +33,7 @@ public class AsteroidCol : MonoBehaviour
             movementScript.OnDeath();
             danielScript.ConfirmedDeath();
         }
+        SceneLoader.instance.Explosion();
         Destroy(GameObject.FindGameObjectWithTag("temporalIndicator"));
         Destroy(gameObject);
     }
