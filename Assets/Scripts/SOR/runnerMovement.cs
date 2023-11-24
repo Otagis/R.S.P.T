@@ -38,14 +38,14 @@ public class runnerMovement : MonoBehaviour
     void Update()
     {
         //if(serialPort.IsOpen)
-        //{
+        {
             //string value = serialPort.ReadLine();
             //string[] Botn = value.Split(',');
             if (Input.GetKeyDown(KeyCode.H))
                 SceneLoader.instance.OnWin();
             if (Input.GetKey(KeyCode.J))
                 transform.Translate(speed * Time.deltaTime, 0, 0);
-            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
+            if (/*(Convert.ToInt32(Botn[0])) == 0*/ Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 isJumping = true;
                 jumpTimeCounter = jumpTime;
@@ -54,9 +54,9 @@ public class runnerMovement : MonoBehaviour
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isSliding", false);
                 collider.height = 2;
-                collider.center = new Vector3 (0, 1, 0);
+                collider.center = new Vector3(0, 1, 0);
             }
-            if (/*(Convert.ToInt32(Botn[0]))*/ Input.GetKey(KeyCode.W) && isJumping == true)
+            if (/*(Convert.ToInt32(Botn[0])) == 0*/ Input.GetKey(KeyCode.W) && isJumping == true)
             {
                 if (jumpTimeCounter > 0)
                 {
@@ -91,7 +91,7 @@ public class runnerMovement : MonoBehaviour
                 collider.height = 2;
                 collider.center = new Vector3 (0, 1, 0);
             }
-        //}
+        }
         
     }
 
@@ -105,6 +105,7 @@ public class runnerMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("meta"))
         {
             speed = 0;
+            //serialPort.Close();
             Destroy(collision.gameObject);
             animator.SetBool("isRunning", false);
             SceneLoader.instance.OnWin();
@@ -120,6 +121,7 @@ public class runnerMovement : MonoBehaviour
     public void OnDeath()
     {
         speed = 0;
+        //serialPort.Close();
         jumpSpeed = new Vector3 (0, 0, 0);
         animator.SetBool("death", true);
         SceneLoader.instance.OnLose();

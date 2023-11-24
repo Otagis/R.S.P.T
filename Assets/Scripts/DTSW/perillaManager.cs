@@ -94,11 +94,13 @@ public class perillaManager : MonoBehaviour
 
         if (remainingTime >= timeBeforeCompletion && deactivate == false)
         {
+            serialPort.Close();
             SceneLoader.instance.OnWin();
             deactivate = true;
         }
         if (isComplete1 && isComplete2 && isComplete3 && deactivate == false)
         {
+            serialPort.Close();
             SceneLoader.instance.OnWin();
             deactivate = true;
         }
